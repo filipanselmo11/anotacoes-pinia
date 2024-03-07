@@ -1,0 +1,40 @@
+{
+    "anotacoes": [
+        {
+            "titulo": "Pagar conta de água",
+            "descricao": "Tenho que pagar a conta de água"
+        },
+        {
+            "titulo": "Dormir Cedo",
+            "descricao": "Preciso dormir cedo"
+        },
+        {
+            "titulo": "Estudar Pinia",
+            "descricao": "Preciso estudar mais Pinia"
+        },
+        {
+            "titulo": "Codar uma api usando Django",
+            "descricao": "Tenho que codar uma outra API pra fixar o que aprendi"
+        },
+        {
+            "titulo": "Cortar o cabelo",
+            "descricao": "Estou cabeludo"
+        },
+        {
+            "titulo": "Dormir de novo",
+            "descricao": "Descanse enquanto eles dormem"
+        },
+        {
+            "titulo": "Cozinhar",
+            "descricao": "Fazer o rango tango"
+        },
+        {
+            "titulo": "Estudar Spring Boot",
+            "descricao": "Preciso upar meu lado Javeiro"
+        },
+        {
+            "titulo": "Mandar CV",
+            "descricao": "Tenho que continuar mandando CV"
+        }
+    ]
+}
