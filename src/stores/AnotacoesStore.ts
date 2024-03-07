@@ -12,7 +12,22 @@ export const useAnotacoesStore = defineStore('anotacoesStore', {
                 this.anotacoes = res.data;
             }).catch(error => {
                 console.log('ERROR ', error);
-            })
+            });
+            this.loading = false;
+        },
+        async addAnotacao(anotacao) {
+            this.loading = true;
+            this.anotacoes.push(anotacao);
+            const body = {
+                titulo: anotacao.titulo,
+                descricao: anotacao.descricao
+            }
+            await api.post('/anotacoes', body).then(res => {
+                console.log('RES ', res.data);
+            }).catch(error => {
+                console.log('ERROR ', error)
+            });
+            this.loading = false;
         }
     }
 });
