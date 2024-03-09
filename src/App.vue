@@ -3,19 +3,21 @@ import AnotacoesTitle from './components/AnotacoesTitle.vue';
 import AnotacoesForm from './components/AnotacoesForm.vue';
 import AnotacoesCard from './components/AnotacoesCard.vue';
 import { useAnotacoesStore } from './stores/AnotacoesStore';
+import type { AnotacoesInterface } from './types/types';
+import { ref } from 'vue';
 
 const anotacoesStore = useAnotacoesStore();
 anotacoesStore.getAnotacoes();
 const excluirAnotacao = () => {
   console.log('Anotação Excluida')
 }
-// cons titulo = ref('')
-// const titulo = '';
-// const descricao = '';
-let anotacaoObj = {};
+const anotacaoObj = ref<AnotacoesInterface>({
+  titulo: '',
+  descricao: ''
+});
 const addAnotacao = () => {
-  anotacoesStore.addAnotacao(anotacaoObj)
-  anotacaoObj = {};
+  anotacoesStore.addAnotacao(anotacaoObj.value);
+  anotacaoObj.value = {titulo: '', descricao: ''};
 
 }
 </script>

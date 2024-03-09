@@ -1,12 +1,13 @@
 import { defineStore } from "pinia";
 import { api } from "@/services/api";
+import type { AnotacoesInterface } from "@/types/types";
 export const useAnotacoesStore = defineStore('anotacoesStore', {
     state: () => ({
-        anotacoes: [],
+        anotacoes: [] as AnotacoesInterface[],
         loading: true,
     }),
     actions: {
-        async getAnotacoes() {
+        async getAnotacoes(): Promise<void> {
             this.loading = true;
             await api.get('/anotacoes').then(res => {
                 this.anotacoes = res.data;
@@ -15,7 +16,7 @@ export const useAnotacoesStore = defineStore('anotacoesStore', {
             });
             this.loading = false;
         },
-        async addAnotacao(anotacao) {
+        async addAnotacao(anotacao: AnotacoesInterface): Promise<void> {
             this.loading = true;
             this.anotacoes.push(anotacao);
             const body = {
